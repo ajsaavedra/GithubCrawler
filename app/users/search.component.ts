@@ -14,7 +14,7 @@ export class SearchComponent {
     username: string;
 
     constructor(private githubService: GithubService) {
-        this.gatherDataAndEmit();
+        this.getUserData();
     }
 
     searchUser() {
@@ -22,10 +22,10 @@ export class SearchComponent {
             return;
         }
         this.githubService.updateUser(this.username);
-        this.gatherDataAndEmit();
+        this.getUserData();
     }
 
-    gatherDataAndEmit() {
+    getUserData() {
         this.getUser();
         this.getUserRepos();
     }
